@@ -23,16 +23,18 @@ struct ContentView: View {
                     selectAnswers()
                 }
             } else {
-                Text("Kana").font(.system(size: 120))
+                Text(text(for: currentKana[currentPosition], isQuestion: true))
+                    .font(.system(size: 120))
                 
                 Grid {
                     GridRow {
-                        Button("A", action: {})
-                        Button("B", action: {})
+                        button(index: 0)
+                        button(index: 1)
                     }
+
                     GridRow {
-                        Button("C", action: {})
-                        Button("D", action: {})
+                        button(index: 2)
+                        button(index: 3)
                     }
                 }
             }
@@ -51,6 +53,42 @@ struct ContentView: View {
         answers = Array(allAnswers.shuffled().prefix(3))
         answers.append(currentKana[currentPosition])
         answers.shuffle()
+    }
+    
+    func text(for character: KanaCharacter, isQuestion: Bool = false) -> String {
+        if isQuestion {
+            character.kana
+        } else {
+            character.romaji
+        }
+    }
+    
+    func button(index: Int) -> some View {
+        let text = text(for: answers[index])
+
+        return AnswerButton(
+            text: text,
+            submit: checkAnswer
+        )
+    }
+    
+    func checkAnswer(_ answer: String) {
+        if answer == text(for: currentKana[currentPosition]) {
+            withAnimation {
+                currentPosition += 1
+
+                if currentPosition >= maxPosition {
+                    currentPosition = 0
+                    maxPosition += 1
+
+                    selectKana()
+                }
+
+                selectAnswers()
+            }
+        } else {
+            // answer was wrong
+        }
     }
 }
 
