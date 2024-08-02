@@ -9,6 +9,7 @@ import SwiftUI
 
 struct AnswerButton: View {
     var text: String
+    var isWrong: Bool
     var submit: (String) -> Void
     
     var body: some View {
@@ -20,11 +21,12 @@ struct AnswerButton: View {
                 .font(.largeTitle)
         }
         .buttonStyle(.borderedProminent)
+        .tint(isWrong ? .red : nil)
     }
 }
 
 #Preview {
-    AnswerButton(text: "x") { _ in
+    AnswerButton(text: "x", isWrong: false) { _ in
         
     }
 }

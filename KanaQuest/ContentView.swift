@@ -14,6 +14,9 @@ struct ContentView: View {
     @State private var answers = [KanaCharacter]()
     @State private var maxPosition = 4
     @State private var currentPosition = 0
+    @State private var isWrong = false
+    @State private var wrongAnswer = Set<String>()
+    
     
     var body: some View {
         VStack {
@@ -25,6 +28,8 @@ struct ContentView: View {
             } else {
                 Text(text(for: currentKana[currentPosition], isQuestion: true))
                     .font(.system(size: 120))
+                    .scaleEffect(isWrong ? 1.5 : 1)
+                    .foregroundStyle(isWrong ? .red : .primary)
                 
                 Grid {
                     GridRow {
@@ -67,7 +72,7 @@ struct ContentView: View {
         let text = text(for: answers[index])
 
         return AnswerButton(
-            text: text,
+            text: text, isWrong: wrongAnswer.contains(text),
             submit: checkAnswer
         )
     }
@@ -76,6 +81,7 @@ struct ContentView: View {
         if answer == text(for: currentKana[currentPosition]) {
             withAnimation {
                 currentPosition += 1
+                wrongAnswer.removeAll()
 
                 if currentPosition >= maxPosition {
                     currentPosition = 0
@@ -87,7 +93,12 @@ struct ContentView: View {
                 selectAnswers()
             }
         } else {
-            // answer was wrong
+            isWrong = true
+            wrongAnswer.insert(answer)
+            
+            withAnimation {
+                isWrong = false
+            }
         }
     }
 }
