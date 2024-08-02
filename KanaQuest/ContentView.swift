@@ -41,8 +41,8 @@ struct ContentView: View {
                     selectAnswers()
                 }
                 .frame(width: 200, height: 50)
-                .background(Color.customYellow)
-                .foregroundColor(Color.customBrown)
+                .background(.blue)
+                .foregroundColor(Color.customLightBeige)
                 .cornerRadius(10)
                 .font(.headline)
                 .padding()
@@ -82,6 +82,7 @@ struct ContentView: View {
                         .frame(width: 100)
                 }
                 .buttonStyle(.borderedProminent)
+                
             }
         }
         .padding()
