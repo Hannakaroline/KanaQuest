@@ -21,7 +21,7 @@ struct AnswerButton: View {
                 .font(.largeTitle)
         }
         .buttonStyle(.borderedProminent)
-        .tint(isWrong ? .red : nil)
+        .tint(isWrong ? Color.customRed : nil)
     }
 }
 

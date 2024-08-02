@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F50488042C5D6767007C2353 /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50488032C5D6767007C2353 /* LottieView.swift */; };
+		F50488072C5D67F6007C2353 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = F50488062C5D67F6007C2353 /* Lottie */; };
+		F50488092C5D6831007C2353 /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50488082C5D6831007C2353 /* SplashScreen.swift */; };
+		F504880C2C5D6944007C2353 /* smiling_dog.json in Resources */ = {isa = PBXBuildFile; fileRef = F504880B2C5D6944007C2353 /* smiling_dog.json */; };
+		F504880E2C5D6A22007C2353 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = F504880D2C5D6A22007C2353 /* Color.swift */; };
 		F56E2D2C2C5C044E0061662A /* KanaQuestApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56E2D2B2C5C044E0061662A /* KanaQuestApp.swift */; };
 		F56E2D2E2C5C044E0061662A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56E2D2D2C5C044E0061662A /* ContentView.swift */; };
 		F56E2D302C5C044F0061662A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F56E2D2F2C5C044F0061662A /* Assets.xcassets */; };
@@ -18,6 +23,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F50488032C5D6767007C2353 /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
+		F50488082C5D6831007C2353 /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
+		F504880B2C5D6944007C2353 /* smiling_dog.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = smiling_dog.json; sourceTree = "<group>"; };
+		F504880D2C5D6A22007C2353 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		F56E2D282C5C044E0061662A /* KanaQuest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KanaQuest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F56E2D2B2C5C044E0061662A /* KanaQuestApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanaQuestApp.swift; sourceTree = "<group>"; };
 		F56E2D2D2C5C044E0061662A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -34,12 +43,31 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F50488072C5D67F6007C2353 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F50488022C5D6758007C2353 /* Animation */ = {
+			isa = PBXGroup;
+			children = (
+				F50488032C5D6767007C2353 /* LottieView.swift */,
+				F50488082C5D6831007C2353 /* SplashScreen.swift */,
+			);
+			path = Animation;
+			sourceTree = "<group>";
+		};
+		F504880A2C5D6933007C2353 /* Json */ = {
+			isa = PBXGroup;
+			children = (
+				F504880B2C5D6944007C2353 /* smiling_dog.json */,
+				F56E2D3B2C5C08150061662A /* kana.json */,
+			);
+			path = Json;
+			sourceTree = "<group>";
+		};
 		F56E2D1F2C5C044E0061662A = {
 			isa = PBXGroup;
 			children = (
@@ -63,10 +91,12 @@
 				F56E2D2D2C5C044E0061662A /* ContentView.swift */,
 				F56E2D392C5C08100061662A /* Bundle-Decodable.swift */,
 				F56E2D3F2C5C14520061662A /* AnswerButton.swift */,
-				F56E2D3B2C5C08150061662A /* kana.json */,
-				F56E2D2F2C5C044F0061662A /* Assets.xcassets */,
-				F56E2D312C5C044F0061662A /* Preview Content */,
 				F56E2D3D2C5C088E0061662A /* KanaCharacter.swift */,
+				F56E2D2F2C5C044F0061662A /* Assets.xcassets */,
+				F50488022C5D6758007C2353 /* Animation */,
+				F504880A2C5D6933007C2353 /* Json */,
+				F56E2D312C5C044F0061662A /* Preview Content */,
+				F504880D2C5D6A22007C2353 /* Color.swift */,
 			);
 			path = KanaQuest;
 			sourceTree = "<group>";
@@ -95,6 +125,9 @@
 			dependencies = (
 			);
 			name = KanaQuest;
+			packageProductDependencies = (
+				F50488062C5D67F6007C2353 /* Lottie */,
+			);
 			productName = KanaQuest;
 			productReference = F56E2D282C5C044E0061662A /* KanaQuest.app */;
 			productType = "com.apple.product-type.application";
@@ -123,6 +156,9 @@
 				Base,
 			);
 			mainGroup = F56E2D1F2C5C044E0061662A;
+			packageReferences = (
+				F50488052C5D67F6007C2353 /* XCRemoteSwiftPackageReference "lottie-ios" */,
+			);
 			productRefGroup = F56E2D292C5C044E0061662A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -137,6 +173,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F504880C2C5D6944007C2353 /* smiling_dog.json in Resources */,
 				F56E2D332C5C044F0061662A /* Preview Assets.xcassets in Resources */,
 				F56E2D3C2C5C08150061662A /* kana.json in Resources */,
 				F56E2D302C5C044F0061662A /* Assets.xcassets in Resources */,
@@ -152,9 +189,12 @@
 			files = (
 				F56E2D402C5C14520061662A /* AnswerButton.swift in Sources */,
 				F56E2D2E2C5C044E0061662A /* ContentView.swift in Sources */,
+				F50488092C5D6831007C2353 /* SplashScreen.swift in Sources */,
 				F56E2D2C2C5C044E0061662A /* KanaQuestApp.swift in Sources */,
 				F56E2D3E2C5C088E0061662A /* KanaCharacter.swift in Sources */,
+				F504880E2C5D6A22007C2353 /* Color.swift in Sources */,
 				F56E2D3A2C5C08100061662A /* Bundle-Decodable.swift in Sources */,
+				F50488042C5D6767007C2353 /* LottieView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -358,6 +398,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F50488052C5D67F6007C2353 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.5.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F50488062C5D67F6007C2353 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F50488052C5D67F6007C2353 /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F56E2D202C5C044E0061662A /* Project object */;
 }

@@ -35,17 +35,24 @@ struct ContentView: View {
                     }
                 }
                 .pickerStyle(.segmented)
-                .padding()
-                
+                Spacer()
                 Button("Start") {
                     selectKana()
                     selectAnswers()
                 }
+                .frame(width: 200, height: 50)
+                .background(Color.customYellow)
+                .foregroundColor(Color.customBrown)
+                .cornerRadius(10)
+                .font(.headline)
+                .padding()
+                
+                Spacer()
             } else {
                 Text(text(for: currentKana[currentPosition], isQuestion: true))
                     .font(.system(size: 120))
                     .scaleEffect(isWrong ? 1.5 : 1)
-                    .foregroundStyle(isWrong ? .red : .primary)
+                    .foregroundStyle(isWrong ? Color.customRed : .primary)
                     .transition(.push(from: .trailing))
                     .id(currentPosition)
                 
@@ -60,9 +67,21 @@ struct ContentView: View {
                         button(index: 3)
                     }
                 }
+                Spacer()
+                    .frame(maxHeight: 50)
+                
                 Text("Streak \(streak)")
                     .contentTransition(.numericText())
                     .font(.title.monospacedDigit())
+                Spacer()
+                
+                Button(role: .destructive) {
+                    currentKana.removeAll()
+                } label: {
+                    Text("End")
+                        .frame(width: 100)
+                }
+                .buttonStyle(.borderedProminent)
             }
         }
         .padding()
